@@ -1,23 +1,24 @@
-import { AppBar,Toolbar,styled } from "@mui/material";
+import { AppBar, Toolbar, styled } from "@mui/material";
+import { NavLink } from "react-router-dom";
 
+const Tabs = styled(NavLink)`
+  font-size: 20px;
+  margin-right: 20px;
+  color: inherit;
+  text-decoration: none;
+`;
 
-const Tabs=styled('p')`
-font-size:20px;
-margin-right:20px;
-`
+const NavBar = () => {
+  return (
+    <AppBar position="static">
+      <Toolbar>
+        <Tabs to="/">AKASH</Tabs>
 
-const NavBar=()=>{
-return(
-<AppBar position="static">
-   <Toolbar>
-    <Tabs>AKASH</Tabs>
-    <Tabs>Add User</Tabs>
-    <Tabs>Display Users</Tabs>
+        <Tabs to="/addequipment">Add Equipment</Tabs>
 
-
-
-   </Toolbar>
-</AppBar>
-)
-}
-export default NavBar
+        <Tabs to="/equipmentlist">Display Equipment</Tabs>
+      </Toolbar>
+    </AppBar>
+  );
+};
+export default NavBar;
