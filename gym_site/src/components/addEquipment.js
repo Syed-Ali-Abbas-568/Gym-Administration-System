@@ -1,78 +1,82 @@
-import React,{useState} from 'react'
-import { FormControl,FormGroup,InputLabel,Input,styled,Button} from "@mui/material";
-import { addEquipment } from '../services/api';
+import React, { useState } from "react";
+import {
+  FormControl,
+  FormGroup,
+  InputLabel,
+  Input,
+  styled,
+  Button,
+} from "@mui/material";
+import { addEquipment } from "../services/api";
 
-const Container=styled(FormGroup)`
-width:50%;
-margin:auto;
-margin-top:5%;
-& > div{
-    margin-top:20px
-}
+const Container = styled(FormGroup)`
+  width: 50%;
+  margin: auto;
+  margin-top: 5%;
+  & > div {
+    margin-top: 20px;
+  }
+`;
 
-`
+const buttonStyle = styled(Button)`
+  width: 25%;
+`;
 
-const defaultEquipment={
+const defaultEquipment = {
+  eqName: "",
+  weight: "",
+  boughtOn: "",
+  lastMaintainenceDate: "",
+};
 
-    eqId:'',
-    eqName:'',
-    weight:'',
-    boughtOn:'',
-    lastMaintainenceDate:''
-}
+const AddEquipment = () => {
+  const [equipment, setEquipment] = useState(defaultEquipment);
 
-const AddEquipment=()=>{
+  const onValueChange = (e) => {
+    setEquipment({ ...equipment, [e.target.name]: e.target.value });
+    console.log(equipment);
+  };
 
-    const [equipment,setEquipment]=useState(defaultEquipment)
+  const addEquipmentDetails = async () => {
+    await addEquipment(equipment);
+  };
 
-    const onValueChange=(e)=>{
+  return (
+    <Container>
+      <hr />
+      <h2>Add Equipment</h2>
+      <hr />
 
-        setEquipment({...equipment,[e.target.name]:e.target.value})
-console.log(equipment)
-    }
+      <FormControl>
+        <InputLabel>Equipment Name</InputLabel>
+        <Input onChange={(e) => onValueChange(e)} name="eqName" />
+      </FormControl>
 
-    const addEquipmentDetails=async()=>{
-        
-await addEquipment(equipment)
+      <FormControl>
+        <InputLabel>Weight</InputLabel>
+        <Input onChange={(e) => onValueChange(e)} name="weight" />
+      </FormControl>
 
-    }
-   
-    return(
-<Container>
-    <h2>Add Equipment</h2>
+      <FormControl>
+        <InputLabel>Bought On</InputLabel>
+        <Input onChange={(e) => onValueChange(e)} name="boughtOn" />
+      </FormControl>
 
-<FormControl>
-<InputLabel >Equipment Id</InputLabel>
-<Input onChange={(e)=>onValueChange(e)} name="eqId"/>
-</FormControl>
+      <FormControl>
+        <InputLabel>Last Maintatinence Date</InputLabel>
+        <Input onChange={(e) => onValueChange(e)} name="lastMaintainenceDate" />
+      </FormControl>
 
-<FormControl>
-<InputLabel >Equipment Name</InputLabel>
-<Input onChange={(e)=>onValueChange(e)} name="eqName"/>
-</FormControl>
-
-<FormControl>
-<InputLabel >Weight</InputLabel>
-<Input onChange={(e)=>onValueChange(e)} name="weight"/>
-</FormControl>
-
-<FormControl>
-<InputLabel >Bought On</InputLabel>
-<Input onChange={(e)=>onValueChange(e)} name="boughtOn"/>
-</FormControl>
-
-<FormControl>
-<InputLabel >Last Maintatinence Date</InputLabel>
-<Input onChange={(e)=>onValueChange(e)} name="lastMaintainenceDate"/>
-</FormControl>
-
-<FormControl>
-<Button variant="contained" onClick={()=>addEquipmentDetails()}>Add Equipment</Button>
-</FormControl>
-
-</Container>
-
-    )
-    
-    }
-export default AddEquipment
+      <FormControl>
+        <Button
+          style={{ width: "25%", margin: "auto" }}
+          variant="contained"
+          onClick={() => addEquipmentDetails()}
+        >
+          Add Equipment
+        </Button>
+      </FormControl>
+    </Container>
+  );
+};
+export default AddEquipment;
