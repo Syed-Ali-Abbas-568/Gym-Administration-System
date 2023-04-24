@@ -14,3 +14,16 @@ catch(error){
 }
 
 } 
+
+export const getEquipment=async(request,response)=>{
+
+    try{
+
+const equip=await equipment.find({})
+response.status(200).json(equip)
+    }
+    catch(error){
+response.status(404).json({message:error.message})
+    }
+
+}
