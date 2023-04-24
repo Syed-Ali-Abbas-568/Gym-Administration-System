@@ -18,9 +18,7 @@ const Container = styled(FormGroup)`
   }
 `;
 
-const buttonStyle = styled(Button)`
-  width: 25%;
-`;
+
 
 const defaultEquipment = {
   eqName: "",
