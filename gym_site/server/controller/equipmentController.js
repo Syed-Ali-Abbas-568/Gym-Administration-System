@@ -1,6 +1,5 @@
 import equipment from "../schema/equipmentSchema.js"
 
-
 export const addEquipment=async (request,response)=>{
 
     const eq=request.body
@@ -27,3 +26,4 @@ response.status(404).json({message:error.message})
     }
 
 }
+
