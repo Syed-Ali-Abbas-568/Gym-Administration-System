@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import {
   FormControl,
   FormGroup,
@@ -9,7 +9,8 @@ import {
 } from "@mui/material";
 import { addEquipment } from "../services/api";
 import { Alert } from "@mui/material";
-
+import { useParams,useNavigate } from "react-router-dom";
+import { getEquipment,changeEquipment } from "../services/api";
 const Container = styled(FormGroup)`
   width: 50%;
   margin: auto;
@@ -28,7 +29,11 @@ const defaultEquipment = {
   lastMaintainenceDate: "",
 };
 
-const AddEquipment = () => {
+const ChangeEquipment = () => {
+
+    useEffect(()=>{loadEquipmentDetails()
+    },[])
+const navigate=useNavigate()
   const [equipment, setEquipment] = useState(defaultEquipment);
   const [success, setSuccess] = useState(-1);
   const onValueChange = (e) => {
@@ -36,49 +41,63 @@ const AddEquipment = () => {
     
   };
 
-  const addEquipmentDetails = async () => {
-    const res=await addEquipment(equipment);
-    setSuccess(res.status===201)
+const {id}=useParams()
 
+
+  const ChangeEquipmentDetails = async () => {
+    const res=await changeEquipment(equipment,id);
+    navigate('/equipmentlist')
+
+    
    
   };
 
+ 
 
+    const loadEquipmentDetails=async()=>{
+
+   
+const response=await getEquipment(id)
+
+setEquipment(response.data[0])
+
+    }
   return (
     <Container>
       <hr />
-      <h2>Add Equipment</h2>
+      <h2>Change Equipment</h2>
       <hr />
 
       <FormControl>
         <InputLabel>Equipment Name</InputLabel>
-        <Input onChange={(e) => onValueChange(e)} name="eqName" />
+        <Input onChange={(e) => onValueChange(e)} name="eqName" value={equipment.eqName}/>
       </FormControl>
 
       <FormControl>
         <InputLabel>Weight</InputLabel>
-        <Input onChange={(e) => onValueChange(e)} name="weight" />
+        <Input onChange={(e) => onValueChange(e)} name="weight" value={equipment.weight}/>
       </FormControl>
 
       <FormControl>
         <InputLabel>Bought On</InputLabel>
-        <Input onChange={(e) => onValueChange(e)} name="boughtOn" />
+        <Input onChange={(e) => onValueChange(e)} name="boughtOn" value={equipment.boughtOn}/>
       </FormControl>
 
       <FormControl>
         <InputLabel>Last Maintatinence Date</InputLabel>
-        <Input onChange={(e) => onValueChange(e)} name="lastMaintainenceDate" />
+        <Input onChange={(e) => onValueChange(e)} name="lastMaintainenceDate" value={equipment.lastMaintainenceDate}/>
       </FormControl>
 
       <FormControl>
         <Button
           style={{ width: "25%", margin: "auto" }}
           variant="contained"
-          onClick={() => addEquipmentDetails()}
+          onClick={()=>ChangeEquipmentDetails()}
+          
         >
-          Add Equipment
+          Save Changes
         </Button>
-       {success===true?<Alert severity="success">Equipment Added Successfully</Alert>:<></>}
+       {success===true?<Alert severity="success">Changes Saved Successfully</Alert>:<></>}
         
         
       </FormControl>
@@ -86,4 +105,4 @@ const AddEquipment = () => {
     </Container>
   );
 };
-export default AddEquipment;
+export default ChangeEquipment;

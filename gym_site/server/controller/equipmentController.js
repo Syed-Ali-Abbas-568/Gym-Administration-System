@@ -14,7 +14,7 @@ catch(error){
 
 } 
 
-export const getEquipment=async(request,response)=>{
+export const getEquipments=async(request,response)=>{
 
     try{
 
@@ -27,3 +27,44 @@ response.status(404).json({message:error.message})
 
 }
 
+<<<<<<< Updated upstream
+=======
+export const getEquipment=async(request,response)=>{
+
+    try{
+
+const equip=await equipment.find({_id:request.params.id})
+response.status(200).json(equip)
+    }
+    catch(error){
+response.status(404).json({message:error.message})
+    }
+
+}
+
+export const changeEquipment=async(request,response)=>{
+
+    try{
+
+ await equipment.updateOne({_id:request.params.id},request.body)
+response.status(201).json(equip)
+    }
+    catch(error){
+response.status(409).json({message:error.message})
+    }
+
+}
+
+export const deleteEquipment=async(request,response)=>{
+
+    try{
+
+ await equipment.deleteOne({_id:request.params.id})
+ response.status(201).json({message:"Deleted Successfully"})
+    }
+    catch(error){
+response.status(409).json({message:error.message})
+    }
+
+}
+>>>>>>> Stashed changes

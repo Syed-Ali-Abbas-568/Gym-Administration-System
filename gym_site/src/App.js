@@ -6,7 +6,9 @@ import EquipmentList from "./components/equipmentList";
 import ClientList from "./components/clientList";
 import LandingPage from "./components/LandingPage";
 import { BrowserRouter, Routes,Route } from "react-router-dom";
-
+import EquipmentToBought from "./components/equipmentToBought";
+import EquipmentsCards from "./components/equipmentMain";
+import ChangeEquipment from "./components/changeMaintainenceDate";
 
 function App(){
 
@@ -20,11 +22,17 @@ function App(){
        <Route path="/addclient" element={<AddClient />} />
        <Route path="/addequipment" element={<AddEquipment />}/>
        <Route path="/equipmentlist" element={<EquipmentList />}/>
+<<<<<<< Updated upstream
        <Route path="/clientlist" element={<ClientList />}/>
+=======
+       <Route path="/equipmenttobought" element={<EquipmentToBought/>}/>
+       <Route path="/equipment" element={<EquipmentsCards/>}/>
+       <Route path="/changeequipment/:id" element={<ChangeEquipment/>}/>
+>>>>>>> Stashed changes
 
        
      </Routes>
-   </BrowserRouter>
+  </BrowserRouter>
   </div>
  )
 }

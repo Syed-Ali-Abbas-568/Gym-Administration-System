@@ -14,6 +14,7 @@ const NavBar = () => {
       <Toolbar>
         <Tabs to="/">AKASH</Tabs>
 
+<<<<<<< Updated upstream
         <Tabs to="/addclient">Add Client</Tabs>
 
         <Tabs to="/addequipment">Add Equipment</Tabs>
@@ -22,6 +23,11 @@ const NavBar = () => {
 
         <Tabs to="/equipmentlist">Display Equipment</Tabs>
       </Toolbar>
+=======
+        <Tabs to="/equipment">Equipment</Tabs>
+
+       </Toolbar>
+>>>>>>> Stashed changes
     </AppBar>
   );
 };
