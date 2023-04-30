@@ -12,7 +12,9 @@ console.log("Error while calling Add Client API ",error)
 
 export const addEquipment=async(data)=>{
     try{
-return await axios.post(`${URL}/addequipment`,data)
+const res=await axios.post(`${URL}/addequipment`,data)
+console.log(res)
+return res
     }catch(error){
 console.log("Error while calling Add Equipment API ",error)
     }
@@ -29,12 +31,35 @@ return await axios.get(`${URL}/dislplayequipment`)
     }
 }
 
-export const displayClients=async()=>{
 
+
+export const getEquipment=async(id)=>{
+    
     try{
-return await axios.get(`${URL}/displayclient`) 
+return await axios.get(`${URL}/${id}`) 
     }
     catch(error){
-        console.log("Error while calling Display Client API ",error)
+        console.log("Error while calling Get Equipment API ",error)
+    }
+}
+
+export const changeEquipment=async(equipment,id)=>{
+    
+    try{
+return await axios.post(`${URL}/${id}`,equipment) 
+    }
+    catch(error){
+        console.log("Error while calling Change Equipment API ",error)
+    }
+}
+
+
+export const delEquipment=async(id)=>{
+    
+    try{
+return await axios.delete(`${URL}/${id}`) 
+    }
+    catch(error){
+        console.log("Error while calling delete Equipment API ",error)
     }
 }
