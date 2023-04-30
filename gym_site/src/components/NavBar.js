@@ -12,7 +12,8 @@ const NavBar = () => {
   return (
     <AppBar position="static">
       <Toolbar>
-        <Tabs to="/">AKASH</Tabs>
+      
+        <Tabs to="/" sx={{fontFamily:'cursive',fontSize:50}}>AKASH</Tabs>
 
         <Tabs to="/equipment">Equipment</Tabs>
 
