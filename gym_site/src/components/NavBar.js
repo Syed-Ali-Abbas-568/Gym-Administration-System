@@ -16,6 +16,9 @@ const NavBar = () => {
 
         <Tabs to="/equipment">Equipment</Tabs>
 
+        <Tabs to="/addclient">Add Client</Tabs>
+        <Tabs to="/clientlist">Display Client</Tabs>
+
        </Toolbar>
     </AppBar>
   );
