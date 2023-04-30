@@ -14,14 +14,9 @@ const NavBar = () => {
       <Toolbar>
         <Tabs to="/">AKASH</Tabs>
 
-        <Tabs to="/addclient">Add Client</Tabs>
+        <Tabs to="/equipment">Equipment</Tabs>
 
-        <Tabs to="/addequipment">Add Equipment</Tabs>
-
-        <Tabs to="/clientlist">Display Client</Tabs>
-
-        <Tabs to="/equipmentlist">Display Equipment</Tabs>
-      </Toolbar>
+       </Toolbar>
     </AppBar>
   );
 };

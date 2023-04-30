@@ -1,4 +1,4 @@
-const hello=()=>{
+const EquipmentToBought=()=>{
 
     return(
 
@@ -6,4 +6,4 @@ const hello=()=>{
     )
 }
 
-export default hello
+export default EquipmentToBought
