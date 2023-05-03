@@ -23,6 +23,7 @@ const defaultClient = {
   email: "",
   phone: "",
   address:"",
+  feestatus:"",
 
 };
 
@@ -62,6 +63,11 @@ const AddClient = () => {
       <FormControl>
         <InputLabel>Address</InputLabel>
         <Input onChange={(e) => onValueChange(e)} name="address" />
+      </FormControl>
+
+      <FormControl>
+        <InputLabel>Fee Status</InputLabel>
+        <Input onChange={(e) => onValueChange(e)} name="feestatus" />
       </FormControl>
 
       <FormControl>

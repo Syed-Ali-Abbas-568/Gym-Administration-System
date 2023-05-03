@@ -22,6 +22,7 @@ const ClientList = () => {
           <TableCell>Email</TableCell>
           <TableCell>Phone</TableCell>
           <TableCell>Address</TableCell>
+          <TableCell>Fee Status</TableCell>
         </TableRow>
       </TableHead>
       <TableBody>
@@ -31,6 +32,7 @@ const ClientList = () => {
             <TableCell>{client.email}</TableCell>
             <TableCell>{client.phone}</TableCell>
             <TableCell>{client.address}</TableCell>
+            <TableCell>{client.feestatus}</TableCell>
           </TableRow>
         ))}
       </TableBody>

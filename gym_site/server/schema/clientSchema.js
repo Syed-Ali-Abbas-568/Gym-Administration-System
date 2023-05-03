@@ -8,6 +8,7 @@ const clientSchema=mongoose.Schema({
     email:String,
     phone:String,
     address:String,
+    feestatus:String,
 
 })
 
