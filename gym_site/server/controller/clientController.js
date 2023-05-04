@@ -14,12 +14,26 @@ catch(error){
 
 } 
 
+
+export const getClients=async(request,response)=>{
+
+    try{
+
+const clien=await client.find({})
+response.status(200).json(clien)
+    }
+    catch(error){
+response.status(404).json({message:error.message})
+    }
+
+}
+
 export const getClient=async(request,response)=>{
 
     try{
 
-const equip=await client.find({})
-response.status(200).json(equip)
+const clien=await client.find({_id:request.params.id})
+response.status(200).json(clien)
     }
     catch(error){
 response.status(404).json({message:error.message})

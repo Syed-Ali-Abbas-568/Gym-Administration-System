@@ -26,8 +26,8 @@ function App(){
        <Route path="/changeequipment/:id" element={<ChangeEquipment/>}/>
 
 
-       <Route exact path="/addclient" element={<AddClient />} />
-       <Route exact path="/clientlist" element={<ClientList />}/>       
+       <Route path="/addclient" element={<AddClient />} />
+       <Route path="/clientlist" element={<ClientList />}/>   
      </Routes>
   </BrowserRouter>
   </div>
