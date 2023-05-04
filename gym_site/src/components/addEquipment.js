@@ -9,6 +9,15 @@ import {
 } from "@mui/material";
 import { addEquipment } from "../services/api";
 import { Alert } from "@mui/material";
+import { DateField } from '@mui/x-date-pickers/DateField';
+import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+
+
+
+
+
 
 const Container = styled(FormGroup)`
   width: 50%;
@@ -32,6 +41,7 @@ const AddEquipment = () => {
   const [equipment, setEquipment] = useState(defaultEquipment);
   const [success, setSuccess] = useState(-1);
   const onValueChange = (e) => {
+   
     setEquipment({ ...equipment, [e.target.name]: e.target.value });
     
   };
@@ -61,13 +71,30 @@ const AddEquipment = () => {
       </FormControl>
 
       <FormControl>
-        <InputLabel>Bought On</InputLabel>
-        <Input onChange={(e) => onValueChange(e)} name="boughtOn" />
+       
+        <LocalizationProvider dateAdapter={AdapterDayjs}>
+      <DemoContainer components={['DateField']}>
+        <DateField label="Bough On"  onChange={(e) =>{
+          let d = new Date(e)
+          d = `${d.getDate()}-${d.getMonth()+1}-${d.getFullYear()}`
+          setEquipment({ ...equipment, boughtOn: d})}} name="boughtOn" />
+      </DemoContainer>
+    </LocalizationProvider>
       </FormControl>
 
+   
       <FormControl>
-        <InputLabel>Last Maintatinence Date</InputLabel>
-        <Input onChange={(e) => onValueChange(e)} name="lastMaintainenceDate" />
+    
+      <LocalizationProvider dateAdapter={AdapterDayjs}>
+      <DemoContainer components={['DateField']}>
+        <DateField label="Last Maintatinence Date" onChange={(e) => {
+              let d = new Date(e)
+              d = `${d.getDate()}-${d.getMonth()+1}-${d.getFullYear()}`
+          setEquipment({ ...equipment, lastMaintainenceDate:d})}}   name="lastMaintainenceDate" />
+      </DemoContainer>
+    </LocalizationProvider>
+
+
       </FormControl>
 
       <FormControl>
