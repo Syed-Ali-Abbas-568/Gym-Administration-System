@@ -11,6 +11,15 @@ import { addEquipment } from "../services/api";
 import { Alert } from "@mui/material";
 import { useParams,useNavigate } from "react-router-dom";
 import { getEquipment,changeEquipment } from "../services/api";
+
+
+import { DateField } from '@mui/x-date-pickers/DateField';
+import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import dayjs from 'dayjs';
+
+
 const Container = styled(FormGroup)`
   width: 50%;
   margin: auto;
@@ -43,7 +52,6 @@ const navigate=useNavigate()
 
 const {id}=useParams()
 
-
   const ChangeEquipmentDetails = async () => {
     const res=await changeEquipment(equipment,id);
     navigate('/equipmentlist')
@@ -56,7 +64,7 @@ const {id}=useParams()
 
     const loadEquipmentDetails=async()=>{
 
-   
+
 const response=await getEquipment(id)
 
 setEquipment(response.data[0])
@@ -87,6 +95,35 @@ setEquipment(response.data[0])
         <InputLabel>Last Maintatinence Date</InputLabel>
         <Input onChange={(e) => onValueChange(e)} name="lastMaintainenceDate" value={equipment.lastMaintainenceDate}/>
       </FormControl>
+
+      <FormControl>
+     
+       <LocalizationProvider dateAdapter={AdapterDayjs}>
+     <DemoContainer components={['DateField']}>
+       <DateField label="Bough On" onChange={(e) =>{
+         let d = new Date(e)
+         d = `${d.getDate()}-${d.getMonth()+1}-${d.getFullYear()}`
+         setEquipment({ ...equipment, boughtOn: d})}} name="boughtOn" />
+     </DemoContainer>
+   </LocalizationProvider>
+     </FormControl>
+
+  
+     <FormControl>
+   
+     <LocalizationProvider dateAdapter={AdapterDayjs}>
+     <DemoContainer components={['DateField']}>
+       <DateField label="Last Maintatinence Date" onChange={(e) => {
+             let d = new Date(e)
+             d = `${d.getDate()}-${d.getMonth()+1}-${d.getFullYear()}`
+         setEquipment({ ...equipment, lastMaintainenceDate:d})}}   name="lastMaintainenceDate" />
+     </DemoContainer>
+   </LocalizationProvider>
+
+
+     </FormControl>
+
+     
 
       <FormControl>
         <Button
