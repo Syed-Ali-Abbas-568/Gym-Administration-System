@@ -9,7 +9,7 @@ import EquipmentsCards from "./components/equipmentMain";
 import ChangeEquipment from "./components/changeMaintainenceDate";
 import AddClient from "./components/addClient";
 import ClientList from "./components/clientList";
-
+import ClientFeeStatus from "./components/ClientFeeStatus";
 function App(){
 
  return(
@@ -27,7 +27,9 @@ function App(){
 
 
        <Route path="/addclient" element={<AddClient />} />
-       <Route path="/clientlist" element={<ClientList />}/>   
+       <Route path="/clientlist" element={<ClientList />}/>  
+
+       <Route path= "/clientFeeStatus" element={<ClientFeeStatus/>}/>
      </Routes>
   </BrowserRouter>
   </div>
