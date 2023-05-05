@@ -13,11 +13,17 @@ export default function EquipmentsCards() {
 
   return (
 
-<Box sx={{display:'flex',flexDirection:'column',alignItems:'center'}}>
+<Box sx={{display:'flex',flexDirection:'row',alignItems:'center'}}>
 
     <Link style={{ textDecoration: 'none' }} to="/addequipment">
-    <Card sx={{ maxWidth: 345,m:5 }}>
+    <Card sx={{m:5,maxWidth:400 }}>
       <CardActionArea>
+      <CardMedia
+          component="img"
+          height="300"
+          image="./gymEquipment.jpg"
+          alt="addequipment"
+        />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
           Add Equipment
@@ -32,8 +38,14 @@ export default function EquipmentsCards() {
 
 
     <Link style={{ textDecoration: 'none' }} to="/equipmentlist">
-    <Card sx={{ maxWidth: 345,m:5 }}>
+    <Card sx={{m:5,width:320 }}>
       <CardActionArea>
+      <CardMedia
+          component="img"
+          height="300"
+          image="./listEquipment.jpg"
+          alt="gymequipment"
+        />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
           Display Equipment
@@ -47,8 +59,14 @@ export default function EquipmentsCards() {
 </Link>
 
 <Link style={{ textDecoration: 'none' }} to="/equipmenttobought">
-    <Card sx={{ maxWidth: 345 ,m:5}}>
+    <Card sx={{m:5,maxWidth:400 }}>
       <CardActionArea>
+      <CardMedia
+          component="img"
+          height="300"
+          image="./displayEquipment.jpg"
+          alt="addequipment"
+        />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
            Equipment to be bought.
@@ -62,8 +80,14 @@ export default function EquipmentsCards() {
 </Link>
 
 <Link style={{ textDecoration: 'none' }} to="/equipmentlist">
-    <Card sx={{ maxWidth: 345 ,m:5}}>
+    <Card sx={{m:5,maxWidth:400 }}>
       <CardActionArea>
+      <CardMedia
+          component="img"
+          height="250"
+          image="./maintainenceEquipment.jpg"
+          alt="addequipment"
+        />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
            Change Maintainence Date
