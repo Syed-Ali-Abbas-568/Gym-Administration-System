@@ -20,6 +20,9 @@ const NavBar = () => {
         <Tabs to="/addclient">Add Client</Tabs>
         <Tabs to="/clientlist">Display Client</Tabs>
 
+        <Tabs to="/clientFeeStatus">Fee Status</Tabs>
+        
+
        </Toolbar>
     </AppBar>
   );

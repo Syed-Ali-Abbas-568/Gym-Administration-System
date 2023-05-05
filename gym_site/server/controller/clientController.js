@@ -1,4 +1,6 @@
+import { response } from "express"
 import client from "../schema/clientSchema.js"
+import userEvent from "@testing-library/user-event"
 
 export const addClient=async (request,response)=>{
 
@@ -40,3 +42,28 @@ response.status(404).json({message:error.message})
     }
 
 }
+
+
+//Fee controller calls
+
+export const getClientsFeeStatus=async (request,response) =>{
+try {
+
+   const users=await  client.find({feestatus: request.params.feestatus})
+    response.status(200).json(users);
+} catch (error) {
+    response.status(404).json({message: error.message});
+}
+
+}
+
+export const UpdateClientsFeeStatus = async (request, response) => {
+    try {
+       
+        const user = await client.updateOne({_id: request.params.id},request.body)
+      response.status(200).json(users);
+    } catch (error) {
+      response.status(404).json({ message: error.message });
+    }
+  };
+
