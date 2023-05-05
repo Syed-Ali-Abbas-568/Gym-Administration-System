@@ -3,12 +3,45 @@ import { Box, ToggleButton, ToggleButtonGroup } from '@mui/material';
 import styled from '@emotion/styled';
 
 import { Table, TableHead, TableRow, TableCell, TableBody, Button } from '@mui/material';
-
+import emailjs from 'emailjs-com';
 
 import { getClientsFeeStatus } from '../services/api';
 import { UpdateClientFeeInformation } from '../services/api';
 
+
+
+
+function sendEmail(client) {
+  emailjs.send('service_6x79b9a', 'template_fhmkixw', {
+    to_name: client.name,
+    to_email: client.email,
+    message: 'We are sending you this message to inform you that your payement is overdue. Please send your payment soon, eitherwise your membership will be canceled.',
+    from_name: 'GYM Administrater',
+    reply_to: 'se.gym.project.568@gmail.com',
+  }, 'YgRXvyp6LcXklWKmj')
+  .then((response) => {
+    console.log('SUCCESS!', response.status, response.text);
+  }, (error) => {
+    console.log('FAILED...', error);
+  });
+}
+
+
+
+
+
+
+
+
 const ClientFeeStatus = () => {
+
+
+
+
+
+
+
+
 
     var feeStatus = 'Paid'
     const [clients, setClients] = useState([]);
@@ -89,7 +122,7 @@ const ClientFeeStatus = () => {
                                 ) : (
                                     <>
                                         <Button key="mark-as-paid" variant='contained' color="success" style={{ marginRight: 10 }} onClick={() => UpdateFeeStatusToPaid(client, 'Paid')} >Mark as Paid</Button>
-                                        <Button key="send-warning-mail" variant='contained' color="error">Send Warning Mail</Button>
+                                        <Button key="send-warning-mail" variant='contained' color="error" onClick={() => sendEmail(client) }>Send Warning Mail</Button>
                                     </>
                                 )}
                             </TableCell>
