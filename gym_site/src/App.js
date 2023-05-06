@@ -10,6 +10,7 @@ import ChangeEquipment from "./components/changeMaintainenceDate";
 import AddClient from "./components/addClient";
 import ClientList from "./components/clientList";
 import ClientFeeStatus from "./components/ClientFeeStatus";
+import ClientCards from "./components/clientMain";
 function App(){
 
  return(
@@ -25,7 +26,7 @@ function App(){
        <Route path="/equipment" element={<EquipmentsCards/>}/>
        <Route path="/changeequipment/:id" element={<ChangeEquipment/>}/>
 
-
+       <Route path="/client" element={<ClientCards/>}/>
        <Route path="/addclient" element={<AddClient />} />
        <Route path="/clientlist" element={<ClientList />}/>  
 
