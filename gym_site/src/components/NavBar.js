@@ -16,12 +16,8 @@ const NavBar = () => {
         <Tabs to="/" sx={{fontFamily:'cursive',fontSize:50}}>AKASH</Tabs>
 
         <Tabs to="/equipment">Equipment</Tabs>
-
-        <Tabs to="/addclient">Add Client</Tabs>
-        <Tabs to="/clientlist">Display Client</Tabs>
-
-        <Tabs to="/clientFeeStatus">Fee Status</Tabs>
-        
+        <Tabs to="/client">Client</Tabs>
+               
 
        </Toolbar>
     </AppBar>

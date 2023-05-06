@@ -8,28 +8,29 @@ import { Link } from 'react-router-dom';
 
 
 
-export default function EquipmentsCards() {
+export default function ClientCards() {
 
 
   return (
 
 <Box sx={{display:'flex',flexDirection:'row',alignItems:'center',justifyContent:'space-evenly'}}>
 
-    <Link style={{ textDecoration: 'none' }} to="/addequipment">
+    <Link style={{ textDecoration: 'none' }} to="/addclient">
     <Card sx={{m:5,width:400 ,height:600}}>
       <CardActionArea>
       <CardMedia
           component="img"
           height="500"
-          image="./gymEquipment.jpg"
+          image="./addClient.jpg"
           alt="addequipment"
-        />
+          
+         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-          Add Equipment
+          Add Client
           </Typography>
           <Typography variant="body2" color="text.secondary">
-           Click to add equipment
+           Click to add Client
           </Typography>
         </CardContent>
       </CardActionArea>
@@ -37,21 +38,21 @@ export default function EquipmentsCards() {
     </Link>
 
 
-    <Link style={{ textDecoration: 'none' }} to="/equipmentlist">
+    <Link style={{ textDecoration: 'none' }} to="/clientlist">
     <Card sx={{m:5,width:400 ,height:600}}>
       <CardActionArea>
       <CardMedia
           component="img"
           height="500"
-          image="./listEquipment.jpg"
+          image="./userList.png"
           alt="gymequipment"
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-          Display Equipment
+          Display Clients
           </Typography>
           <Typography variant="body2" color="text.secondary">
-           Click to view list of equipment
+           Click to view list of Clients
           </Typography>
         </CardContent>
       </CardActionArea>
@@ -60,21 +61,22 @@ export default function EquipmentsCards() {
 
 
 
-<Link style={{ textDecoration: 'none' }} to="/equipmentlist">
+<Link style={{ textDecoration: 'none' }} to="/clientFeeStatus">
     <Card sx={{m:5,width:400 ,height:600}}>
       <CardActionArea>
       <CardMedia
           component="img"
           height="500"
-          image="./maintainenceEquipment.jpg"
+          image="./feeStatus.png"
           alt="addequipment"
+          color='white'
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-           Change Maintainence Date
+           View and change fee status
           </Typography>
           <Typography variant="body2" color="text.secondary">
-           Click to achange the last maintainence date or information of equipment.
+           Click to  View and change fee status
           </Typography>
         </CardContent>
       </CardActionArea>
