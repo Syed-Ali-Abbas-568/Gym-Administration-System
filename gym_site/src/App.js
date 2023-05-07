@@ -3,38 +3,48 @@ import NavBar from "./components/NavBar";
 import AddEquipment from "./components/addEquipment";
 import EquipmentList from "./components/equipmentList";
 import LandingPage from "./components/LandingPage";
-import { BrowserRouter, Routes,Route } from "react-router-dom";
-import EquipmentToBought from "./components/equipmentToBought";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import EquipmentsCards from "./components/equipmentMain";
 import ChangeEquipment from "./components/changeMaintainenceDate";
 import AddClient from "./components/addClient";
 import ClientList from "./components/clientList";
 import ClientFeeStatus from "./components/ClientFeeStatus";
 import ClientCards from "./components/clientMain";
+import LogInSide from "./components/login";
+import Footer from "./components/footer";
+
 function App(){
+  const location = useLocation();
 
- return(
+  // Hide the NavBar component on the home page ("/")
+  const showNavBar = location.pathname !== "/";
 
-  <div>
-  <BrowserRouter>
-     <NavBar/>
-     <Routes>
-       <Route path="/" element={<LandingPage />}/>
-       <Route path="/addequipment" element={<AddEquipment />}/>
-       <Route path="/equipmentlist" element={<EquipmentList />}/>   
-       <Route path="/equipmenttobought" element={<EquipmentToBought/>}/>
-       <Route path="/equipment" element={<EquipmentsCards/>}/>
-       <Route path="/changeequipment/:id" element={<ChangeEquipment/>}/>
-
-       <Route path="/client" element={<ClientCards/>}/>
-       <Route path="/addclient" element={<AddClient />} />
-       <Route path="/clientlist" element={<ClientList />}/>  
-
-       <Route path= "/clientFeeStatus" element={<ClientFeeStatus/>}/>
-     </Routes>
-  </BrowserRouter>
-  </div>
- )
+  return (
+    <div>
+      {showNavBar && <NavBar />}
+      <Routes>     
+        <Route path="/" element={<LogInSide/>}/>
+        <Route path="/home" element={<LandingPage />}/>
+        <Route path="/addequipment" element={<AddEquipment />}/>
+        <Route path="/equipmentlist" element={<EquipmentList />}/>   
+        <Route path="/equipment" element={<EquipmentsCards/>}/>
+        <Route path="/changeequipment/:id" element={<ChangeEquipment/>}/>
+        <Route path="/client" element={<ClientCards/>}/>
+        <Route path="/addclient" element={<AddClient />} />
+        <Route path="/clientlist" element={<ClientList />}/>  
+        <Route path="/clientFeeStatus" element={<ClientFeeStatus/>}/> 
+      </Routes>
+<Footer/>
+    </div>
+  );
 }
 
-export default App;
+function WrappedApp() {
+  return (
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  );
+}
+
+export default WrappedApp;

@@ -16,11 +16,11 @@ export default function ClientCards() {
 <Box sx={{display:'flex',flexDirection:'row',alignItems:'center',justifyContent:'space-evenly'}}>
 
     <Link style={{ textDecoration: 'none' }} to="/addclient">
-    <Card sx={{m:5,width:400 ,height:600}}>
+    <Card sx={{m:5,width:300 ,height:500}}>
       <CardActionArea>
       <CardMedia
           component="img"
-          height="500"
+          height="400"
           image="./addClient.jpg"
           alt="addequipment"
           
@@ -39,11 +39,11 @@ export default function ClientCards() {
 
 
     <Link style={{ textDecoration: 'none' }} to="/clientlist">
-    <Card sx={{m:5,width:400 ,height:600}}>
+    <Card sx={{m:5,width:300 ,height:500}}>
       <CardActionArea>
       <CardMedia
           component="img"
-          height="500"
+          height="400"
           image="./userList.png"
           alt="gymequipment"
         />
@@ -62,11 +62,11 @@ export default function ClientCards() {
 
 
 <Link style={{ textDecoration: 'none' }} to="/clientFeeStatus">
-    <Card sx={{m:5,width:400 ,height:600}}>
+    <Card sx={{m:5,width:300 ,height:500}}>
       <CardActionArea>
       <CardMedia
           component="img"
-          height="500"
+          height="380"
           image="./feeStatus.png"
           alt="addequipment"
           color='white'

@@ -6,17 +6,19 @@ const Tabs = styled(NavLink)`
   margin-right: 20px;
   color: inherit;
   text-decoration: none;
+  
+  
 `;
 
 const NavBar = () => {
   return (
-    <AppBar position="static">
-      <Toolbar>
+    <AppBar position="static"  >
+      <Toolbar sx={{background:'#317af7'}}>
       
-        <Tabs to="/" sx={{fontFamily:'cursive',fontSize:50}}>AKASH</Tabs>
+        <Tabs to="/home" sx={{fontFamily:'cursive',fontSize:50,background:'#317af7',color: 'white'}}>AKASH</Tabs>
 
-        <Tabs to="/equipment">Equipment</Tabs>
-        <Tabs to="/client">Client</Tabs>
+        <Tabs to="/equipment" sx={{color: 'white'}}>Equipment</Tabs>
+        <Tabs to="/client" sx={{color: 'white'}}>Client</Tabs>
                
 
        </Toolbar>
