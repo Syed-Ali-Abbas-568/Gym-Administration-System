@@ -12,7 +12,7 @@ const app=express()
 dotenv.config()
 app.use(bodyParser.json({extended:true}))
 app.use(bodyParser.urlencoded({extended:true}))
-app.use(cors())
+app.use(cors()) 
 app.use('/',router)
 const userName=process.env.DB_USER_NAME
 const password=process.env.DB_USER_PASSWORD
