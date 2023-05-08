@@ -49,6 +49,7 @@ const AddEquipment = () => {
   const addEquipmentDetails = async () => {
     const res=await addEquipment(equipment);
     setSuccess(res.status===201)
+    
 
    
   };
