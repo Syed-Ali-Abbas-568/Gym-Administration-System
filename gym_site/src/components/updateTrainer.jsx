@@ -138,16 +138,16 @@ const UpdateTrainer = () => {
             console.log(updatedTrainer)
             const res = await updateTrainerInformation(updatedTrainer, id);
             setSuccess(res === 201);
+            navigate('/trainerlist')
 
             setTrainer(defaultTrainer);
             dateFieldRef.current.value = null;
-            navigate('/trainer/trainerlist')
-
+           
 
         }
         else {
             setSuccess(2);
-            navigate('/trainer/trainerlist')
+            navigate('/trainerlist')
         }
     };
 

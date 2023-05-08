@@ -6,6 +6,7 @@ import EquipmentList from "./components/equipmentList";
 
 import LandingPage from "./components/LandingPage";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+
 import EquipmentsCards from "./components/equipmentMain";
 import ChangeEquipment from "./components/changeMaintainenceDate";
 import AddClient from "./components/addClient";
@@ -19,6 +20,9 @@ import TrainerList from "./components/trainerList";
 import UpdateTrainer from "./components/updateTrainer";
 import LogInSide from "./components/login";
 import Footer from "./components/footer";
+import TrainerFee from "./components/trainerFee";
+
+
 
 
 
@@ -50,7 +54,7 @@ function App(){
         <Route path="/addtrainer" element={<AddTrainer />} />
         <Route path="/trainerlist" element={<TrainerList />} />
         <Route path="/trainer/updateTrainer/:id" element={<UpdateTrainer />} />
-        <Route path="/trainerFeeStatus" element={<ClientFeeStatus />} />
+        <Route path="/trainerFeeStatus" element={<TrainerFee />} />
       </Routes>
       <Footer />
     </div>

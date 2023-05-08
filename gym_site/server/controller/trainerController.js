@@ -73,3 +73,29 @@ response.status(409).json({message:error.message})
     }
 
 }
+
+
+
+
+export const getTrainerFeeStatus=async (request,response) =>{
+    try {
+    
+       const users=await  trainer.find({feeStatus: request.params.feestatus})
+        response.status(200).json(users);
+    } catch (error) {
+        response.status(404).json({message: error.message});
+    }
+    
+    }
+    
+    export const UpdateTrainerFeeStatus = async (request, response) => {
+        try {
+           
+            const user = await trainer.updateOne({_id: request.params.id},request.body)
+          response.status(200).json(users);
+        } catch (error) {
+          response.status(404).json({ message: error.message });
+        }
+      };
+    
+    
