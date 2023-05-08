@@ -1,0 +1,55 @@
+.landing-page-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .left-panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    padding: 20px;
+  }
+  
+  .header {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .title {
+    font-family: cursive;
+  }
+  
+  .separator {
+    width: 50%;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .description {
+    font-family: cursive;
+    font-weight: bold;
+    font-size: 1.2rem;
+    line-height: 1.5;
+  }
+  
+  .features {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .subtitle {
+    font-family: cursive;
+    margin-bottom: 10px;
+  }
+  
+  .right-panel {
+    width: 50%;
+    height: 100%;
+    /* Add your background image or video here */
+  }
+  

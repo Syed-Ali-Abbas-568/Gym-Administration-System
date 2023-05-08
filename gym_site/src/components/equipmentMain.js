@@ -16,11 +16,11 @@ export default function EquipmentsCards() {
 <Box sx={{display:'flex',flexDirection:'row',alignItems:'center',justifyContent:'space-evenly'}}>
 
     <Link style={{ textDecoration: 'none' }} to="/addequipment">
-    <Card sx={{m:5,width:400 ,height:600}}>
+    <Card sx={{m:5,width:300 ,height:500}}>
       <CardActionArea>
       <CardMedia
           component="img"
-          height="500"
+          height="400"
           image="./gymEquipment.jpg"
           alt="addequipment"
         />
@@ -38,11 +38,11 @@ export default function EquipmentsCards() {
 
 
     <Link style={{ textDecoration: 'none' }} to="/equipmentlist">
-    <Card sx={{m:5,width:400 ,height:600}}>
+    <Card sx={{m:5,width:300 ,height:500}}>
       <CardActionArea>
       <CardMedia
           component="img"
-          height="500"
+          height="400"
           image="./listEquipment.jpg"
           alt="gymequipment"
         />
@@ -61,11 +61,11 @@ export default function EquipmentsCards() {
 
 
 <Link style={{ textDecoration: 'none' }} to="/equipmentlist">
-    <Card sx={{m:5,width:400 ,height:600}}>
+    <Card sx={{m:5,width:300 ,height:500}}>
       <CardActionArea>
       <CardMedia
           component="img"
-          height="500"
+          height="370"
           image="./maintainenceEquipment.jpg"
           alt="addequipment"
         />
