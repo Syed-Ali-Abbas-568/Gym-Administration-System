@@ -17,14 +17,9 @@ const NavBar = () => {
       
         <Tabs to="/home" sx={{fontFamily:'cursive',fontSize:50,background:'#317af7',color: 'white'}}>AKASH</Tabs>
 
-
-        <Tabs to="/equipment">Equipment</Tabs>
-        <Tabs to="/client">Client</Tabs>
-        <Tabs to="/trainer">Trainer</Tabs>
         <Tabs to="/equipment" sx={{color: 'white'}}>Equipment</Tabs>
         <Tabs to="/client" sx={{color: 'white'}}>Client</Tabs>
-             <Tabs to="/trainer" sx={{color: 'white'}} >Trainer</Tabs>   
-
+               
 
        </Toolbar>
     </AppBar>
