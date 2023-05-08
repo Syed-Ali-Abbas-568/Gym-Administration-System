@@ -20,7 +20,7 @@ const NavBar = () => {
         <Tabs to="/equipment" sx={{color: 'white'}}>Equipment</Tabs>
         <Tabs to="/client" sx={{color: 'white'}}>Client</Tabs>
                
-
+        <Tabs to="/trainer" sx={{color: 'white'}}>Trainer</Tabs>
        </Toolbar>
     </AppBar>
   );

@@ -177,3 +177,31 @@ export const delTrainer = async (id) => {
         console.log("Error while calling delete Equipment API ", error)
     }
 }
+
+
+
+export const getTrainerFeeInfoStatus = async (status) => {
+
+    console.log(status)
+    try {
+       const response= await axios.get(`${URL}/trainerFeeStatus/${status}`)
+       console.log(response)
+       return response
+       
+    }
+    catch (error) {
+        console.log("Error while calling Display Trainer FEE Status API ", error)
+    }
+}
+
+
+
+export const UpdateTrainerFeeInfo= async (id, trainerInfo) => {
+    try {
+      return await axios.post(`${URL}/trainerFeeStatus/update/${id}`, trainerInfo);
+
+    } catch (error) {
+      console.log("Error while calling Update Trainer Fee Status API ", error);
+    }
+  }
+
