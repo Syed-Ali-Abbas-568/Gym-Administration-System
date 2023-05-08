@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import {
   FormControl,
   FormGroup,
@@ -9,8 +9,8 @@ import {
 } from "@mui/material";
 import { addEquipment } from "../services/api";
 import { Alert } from "@mui/material";
-import { useParams,useNavigate } from "react-router-dom";
-import { getEquipment,changeEquipment } from "../services/api";
+import { useParams, useNavigate } from "react-router-dom";
+import { getEquipment, changeEquipment } from "../services/api";
 
 
 import { DateField } from '@mui/x-date-pickers/DateField';
@@ -40,36 +40,37 @@ const defaultEquipment = {
 
 const ChangeEquipment = () => {
 
-    useEffect(()=>{loadEquipmentDetails()
-    },[])
-const navigate=useNavigate()
+  useEffect(() => {
+    loadEquipmentDetails()
+  }, [])
+  const navigate = useNavigate()
   const [equipment, setEquipment] = useState(defaultEquipment);
   const [success, setSuccess] = useState(-1);
   const onValueChange = (e) => {
     setEquipment({ ...equipment, [e.target.name]: e.target.value });
-    
+
   };
 
-const {id}=useParams()
+  const { id } = useParams()
 
   const ChangeEquipmentDetails = async () => {
-    const res=await changeEquipment(equipment,id);
+    const res = await changeEquipment(equipment, id);
     navigate('/equipmentlist')
 
-    
-   
+
+
   };
 
- 
-
-    const loadEquipmentDetails=async()=>{
 
 
-const response=await getEquipment(id)
+  const loadEquipmentDetails = async () => {
 
-setEquipment(response.data[0])
 
-    }
+    const response = await getEquipment(id)
+
+    setEquipment(response.data[0])
+
+  }
   return (
     <Container>
       <hr />
@@ -78,67 +79,69 @@ setEquipment(response.data[0])
 
       <FormControl>
         <InputLabel>Equipment Name</InputLabel>
-        <Input onChange={(e) => onValueChange(e)} name="eqName" value={equipment.eqName}/>
+        <Input onChange={(e) => onValueChange(e)} name="eqName" value={equipment.eqName} />
       </FormControl>
 
       <FormControl>
         <InputLabel>Weight</InputLabel>
-        <Input onChange={(e) => onValueChange(e)} name="weight" value={equipment.weight}/>
+        <Input onChange={(e) => onValueChange(e)} name="weight" value={equipment.weight} />
       </FormControl>
 
       <FormControl>
         <InputLabel>Bought On</InputLabel>
-        <Input onChange={(e) => onValueChange(e)} name="boughtOn" value={equipment.boughtOn}/>
+        <Input onChange={(e) => onValueChange(e)} name="boughtOn" value={equipment.boughtOn} />
       </FormControl>
 
       <FormControl>
         <InputLabel>Last Maintatinence Date</InputLabel>
-        <Input onChange={(e) => onValueChange(e)} name="lastMaintainenceDate" value={equipment.lastMaintainenceDate}/>
+        <Input onChange={(e) => onValueChange(e)} name="lastMaintainenceDate" value={equipment.lastMaintainenceDate} />
       </FormControl>
 
       <FormControl>
-     
-       <LocalizationProvider dateAdapter={AdapterDayjs}>
-     <DemoContainer components={['DateField']}>
-       <DateField label="Bough On" onChange={(e) =>{
-         let d = new Date(e)
-         d = `${d.getDate()}-${d.getMonth()+1}-${d.getFullYear()}`
-         setEquipment({ ...equipment, boughtOn: d})}} name="boughtOn" />
-     </DemoContainer>
-   </LocalizationProvider>
-     </FormControl>
 
-  
-     <FormControl>
-   
-     <LocalizationProvider dateAdapter={AdapterDayjs}>
-     <DemoContainer components={['DateField']}>
-       <DateField label="Last Maintatinence Date" onChange={(e) => {
-             let d = new Date(e)
-             d = `${d.getDate()}-${d.getMonth()+1}-${d.getFullYear()}`
-         setEquipment({ ...equipment, lastMaintainenceDate:d})}}   name="lastMaintainenceDate" />
-     </DemoContainer>
-   </LocalizationProvider>
+        <LocalizationProvider dateAdapter={AdapterDayjs}>
+          <DemoContainer components={['DateField']}>
+            <DateField label="Bough On" onChange={(e) => {
+              let d = new Date(e)
+              d = `${d.getDate()}-${d.getMonth() + 1}-${d.getFullYear()}`
+              setEquipment({ ...equipment, boughtOn: d })
+            }} name="boughtOn" />
+          </DemoContainer>
+        </LocalizationProvider>
+      </FormControl>
 
 
-     </FormControl>
+      <FormControl>
 
-     
+        <LocalizationProvider dateAdapter={AdapterDayjs}>
+          <DemoContainer components={['DateField']}>
+            <DateField label="Last Maintatinence Date" onChange={(e) => {
+              let d = new Date(e)
+              d = `${d.getDate()}-${d.getMonth() + 1}-${d.getFullYear()}`
+              setEquipment({ ...equipment, lastMaintainenceDate: d })
+            }} name="lastMaintainenceDate" />
+          </DemoContainer>
+        </LocalizationProvider>
+
+
+      </FormControl>
+
+
 
       <FormControl>
         <Button
           style={{ width: "25%", margin: "auto" }}
           variant="contained"
-          onClick={()=>ChangeEquipmentDetails()}
-          
+          onClick={() => ChangeEquipmentDetails()}
+
         >
           Save Changes
         </Button>
-       {success===true?<Alert severity="success">Changes Saved Successfully</Alert>:<></>}
-        
-        
+        {success === true ? <Alert severity="success">Changes Saved Successfully</Alert> : <></>}
+
+
       </FormControl>
-     
+
     </Container>
   );
 };
