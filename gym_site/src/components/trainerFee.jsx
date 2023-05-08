@@ -6,24 +6,31 @@ import { Table, TableHead, TableRow, TableCell, TableBody, Button } from '@mui/m
 import emailjs from 'emailjs-com';
 
 
-import { UpdateTrainerFeeInfo,getTrainerFeeInfoStatus  } from '../services/api';
+import { UpdateTrainerFeeInfo, getTrainerFeeInfoStatus } from '../services/api';
 
 
 
 
 function sendEmail(client) {
-  emailjs.send('service_6x79b9a', 'template_y3e03wf', {
-    to_name: client.name,
-    to_email: client.email,
-    message: 'We are sending you this message to inform you that we have sent your salary to your account please check',
-    from_name: 'GYM Administrater',
-    reply_to: 'se.gym.project.568@gmail.com',
-  }, 'YgRXvyp6LcXklWKmj')
-  .then((response) => {
-    console.log('SUCCESS!', response.status, response.text);
-  }, (error) => {
-    console.log('FAILED...', error);
-  });
+    const confirmed = window.confirm(`Are you sure you want to send salary to this MR. ${client.name}?`);
+    if (confirmed) {
+
+
+        emailjs.send('service_6x79b9a', 'template_y3e03wf', {
+            to_name: client.name,
+            to_email: client.email,
+            message: 'We are sending you this message to inform you that we have sent your salary to your account please check',
+            from_name: 'GYM Administrater',
+            reply_to: 'se.gym.project.568@gmail.com',
+        }, 'YgRXvyp6LcXklWKmj')
+            .then((response) => {
+                console.log('SUCCESS!', response.status, response.text);
+            }, (error) => {
+                console.log('FAILED...', error);
+            });
+
+            alert("Salary Email sent Successfully")
+    }
 }
 
 
@@ -44,14 +51,14 @@ const TrainerFee = () => {
     }, [selectedValue]);
 
     const getTrainerFeeInfo = async (feeStatus) => {
-        const trainerList = await getTrainerFeeInfoStatus (feeStatus);
+        const trainerList = await getTrainerFeeInfoStatus(feeStatus);
         setClients(trainerList.data);
     };
 
     const UpdateFeeStatusToPaid = async (originalTrainer, newFeeStatus) => {
         try {
             const newUser = { ...originalTrainer, feeStatus: newFeeStatus };
-         
+
             console.log(originalTrainer._id)
             await UpdateTrainerFeeInfo(originalTrainer._id, newUser);
             getTrainerFeeInfo(selectedValue);
@@ -114,7 +121,7 @@ const TrainerFee = () => {
                                 ) : (
                                     <>
                                         <Button key="mark-as-paid" variant='contained' color="success" style={{ marginRight: 10 }} onClick={() => UpdateFeeStatusToPaid(trainer, 'Paid')} >Mark as Paid</Button>
-                                        <Button key="send-warning-mail" variant='contained' color="error" onClick={() => sendEmail(trainer) }>Send Salary</Button>
+                                        <Button key="send-warning-mail" variant='contained' color="secondary" onClick={() => sendEmail(trainer)}>Send Salary</Button>
                                     </>
                                 )}
                             </TableCell>

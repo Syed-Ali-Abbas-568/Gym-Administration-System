@@ -17,7 +17,7 @@ import {
     Stack
 } from "@mui/material";
 
-import {  displayClients, getOnlyOneClient, getTrainer, updateTrainerInformation } from "../services/api";
+import {  displayClients, getClient, getTrainer, updateTrainerInformation } from "../services/api";
 import { useParams, useNavigate } from "react-router-dom";
 
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
@@ -59,7 +59,7 @@ const UpdateTrainer = () => {
         setTrainer(response.data[0])
 
         const transformedClients = await Promise.all(trainer.clients.map(async (client) => {
-            const response = await getOnlyOneClient(client.client_id);
+            const response = await getClient(client.client_id);
             const clientData = response.data;
             return clientData;
         }));
