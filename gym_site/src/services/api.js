@@ -165,8 +165,10 @@ export const updateTrainerInformation = async (trainer, id) => {
 }
 
 export const delTrainer = async (id) => {
+    
 
     try {
+
         const rest= await axios.delete(`${URL}/trainer/deleteTrainer/${id}`);
         
         return rest;

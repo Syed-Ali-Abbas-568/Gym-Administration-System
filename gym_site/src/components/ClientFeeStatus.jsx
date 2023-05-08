@@ -12,12 +12,10 @@ import { UpdateClientFeeInformation } from '../services/api';
 
 
 function sendEmail(client) {
-  console.log(client.Name)
-    emailjs.send('service_6x79b9a', 'template_fhmkixw', {
-    
-    to_name: client.Name,
+  emailjs.send('service_6x79b9a', 'template_fhmkixw', {
+    to_name: client.name,
     to_email: client.email,
-    message: 'We are sending you this message to inform you that your payement is overdue. Please send your payment soon, otherwise your membership will be canceled.',
+    message: 'We are sending you this message to inform you that your payement is overdue. Please send your payment soon, eitherwise your membership will be canceled.',
     from_name: 'GYM Administrater',
     reply_to: 'se.gym.project.568@gmail.com',
   }, 'YgRXvyp6LcXklWKmj')
@@ -29,7 +27,20 @@ function sendEmail(client) {
 }
 
 
+
+
+
+
+
+
 const ClientFeeStatus = () => {
+
+
+
+
+
+
+
 
 
     var feeStatus = 'Paid'
