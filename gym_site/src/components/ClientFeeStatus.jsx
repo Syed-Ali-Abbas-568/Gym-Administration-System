@@ -31,7 +31,6 @@ function sendEmail(client) {
   alert("Warning mail sent successfully")
 }
 }
-}
 
 
 
