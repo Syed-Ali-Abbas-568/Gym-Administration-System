@@ -8,6 +8,7 @@ import {
   Button,
 } from "@mui/material";
 import { addClient } from "../services/api"; // Import your API function for adding clients
+import { Alert } from "@mui/material";
 
 const Container = styled(FormGroup)`
   width: 50%;
@@ -29,7 +30,6 @@ const defaultClient = {
 
 const AddClient = () => {
   const [client, setClient] = useState(defaultClient);
-
   const onValueChange = (e) => {
     setClient({ ...client, [e.target.name]: e.target.value });
     console.log(client);
@@ -37,6 +37,7 @@ const AddClient = () => {
 
   const addClientDetails = async () => {
     await addClient(client);
+    alert("Client Added successfully!");
   };
 
   return (

@@ -12,6 +12,7 @@ import ClientFeeStatus from "./components/ClientFeeStatus";
 import ClientCards from "./components/clientMain";
 import LogInSide from "./components/login";
 import Footer from "./components/footer";
+import EditClient from "./components/editClient";
 
 function App(){
   const location = useLocation();
@@ -32,6 +33,7 @@ function App(){
         <Route path="/client" element={<ClientCards/>}/>
         <Route path="/addclient" element={<AddClient />} />
         <Route path="/clientlist" element={<ClientList />}/>  
+        <Route path="/editClient/:id" element={<EditClient/>}/>
         <Route path="/clientFeeStatus" element={<ClientFeeStatus/>}/> 
       </Routes>
 <Footer/>
