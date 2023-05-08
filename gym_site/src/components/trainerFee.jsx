@@ -12,6 +12,7 @@ import { UpdateTrainerFeeInfo, getTrainerFeeInfoStatus } from '../services/api';
 
 
 function sendEmail(client) {
+
     const confirmed = window.confirm(`Are you sure you want to send salary to this MR. ${client.name}?`);
     if (confirmed) {
 
@@ -28,8 +29,7 @@ function sendEmail(client) {
             }, (error) => {
                 console.log('FAILED...', error);
             });
-
-            alert("Salary Email sent Successfully")
+ alert(`Salary has been successfully sent to trainer ${client.name}`)
     }
 }
 
@@ -121,7 +121,9 @@ const TrainerFee = () => {
                                 ) : (
                                     <>
                                         <Button key="mark-as-paid" variant='contained' color="success" style={{ marginRight: 10 }} onClick={() => UpdateFeeStatusToPaid(trainer, 'Paid')} >Mark as Paid</Button>
-                                        <Button key="send-warning-mail" variant='contained' color="secondary" onClick={() => sendEmail(trainer)}>Send Salary</Button>
+
+                                        <Button key="send-warning-mail" variant='contained' color="secondary" onClick={() => sendEmail(trainer) }>Send Salary</Button>
+
                                     </>
                                 )}
                             </TableCell>

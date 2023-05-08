@@ -43,7 +43,7 @@ function Footer() {
         <FaLinkedin className={classes.icon} />
       </div>
       <p className={classes.address}>
-        123 Main Street, Suite 200, Anytown, USA
+        FAST, Faisal Town, Lahore, Pakistan
       </p>
     </Paper>
   );

@@ -13,10 +13,9 @@ import { UpdateClientFeeInformation } from '../services/api';
 
 function sendEmail(client) {
 
-    const confirmed = window.confirm(`Are you sure you want to send warning mail to ${client.Name} ?`);
+    const confirmed = window.confirm(`Are you sure you want to send this Mr. ${client.Name} a warning email?`);
     if (confirmed) {
-     
-   
+
   emailjs.send('service_6x79b9a', 'template_fhmkixw', {
     to_name: client.name,
     to_email: client.email,
@@ -30,6 +29,7 @@ function sendEmail(client) {
     console.log('FAILED...', error);
   });
   alert("Warning mail sent successfully")
+}
 }
 }
 

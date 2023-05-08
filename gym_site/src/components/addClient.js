@@ -37,7 +37,9 @@ const AddClient = () => {
 
   const addClientDetails = async () => {
     await addClient(client);
-    alert("Client Added successfully!");
+
+    alert(`Client ${client.Name}  has been successfully added. `)
+
   };
 
   return (
