@@ -66,6 +66,8 @@ export const addClient = async (data) => {
     }
 }
 
+
+
 export const displayClients = async () => {
 
     try {
@@ -76,9 +78,19 @@ export const displayClients = async () => {
     }
 }
 
+export const getOnlyOneClient = async (id) => {
+
+    try {
+        return await axios.get(`${URL}/client/getClient/info/:id'${id}`)
+    }
+    catch (error) {
+        console.log("Error while calling Display Client API ", error)
+    }
+}
 
 
-// Work on these
+
+
 export const getClientsFeeStatus = async (status) => {
 
     console.log(status)
@@ -103,3 +115,65 @@ export const UpdateClientFeeInformation = async (id, clientInfo) => {
       console.log("Error while calling Update Client Fee Status API ", error);
     }
   }
+
+
+
+
+  //Trainer APIS
+  export const addTrainer = async (data) => {
+    try {
+      const res = await axios.post(`${URL}/trainer/addTrainer`, data);
+      console.log(res);
+      return res;
+    } catch (error) {
+      console.log("Error while calling Add Trainer API ", error);
+
+    }
+  };
+
+  export const displayTrainer = async () => {
+
+    try {
+        return await axios.get(`${URL}/trainer/displayTrainer`)
+    }
+    catch (error) {
+        console.log("Error while calling Display Equipment API ", error)
+    }
+}
+
+
+
+
+export const getTrainer = async (id) => {
+
+    try {
+        return await axios.get(`${URL}/trainer/getTrainer/${id}`)
+    }
+    catch (error) {
+        console.log("Error while calling Get trainer API ", error)
+    }
+}
+
+export const updateTrainerInformation = async (trainer, id) => {
+
+    try {
+        return await axios.post(`${URL}/trainer/updateTrainer/${id}`, trainer)
+    }
+    catch (error) {
+        console.log("Error while calling update trainer API ", error)
+    }
+}
+
+export const delTrainer = async (id) => {
+    
+
+    try {
+
+        const rest= await axios.delete(`${URL}/trainer/deleteTrainer/${id}`);
+        
+        return rest;
+    }
+    catch (error) {
+        console.log("Error while calling delete Equipment API ", error)
+    }
+}

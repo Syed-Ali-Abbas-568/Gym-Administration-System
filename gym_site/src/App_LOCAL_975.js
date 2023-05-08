@@ -3,7 +3,7 @@ import NavBar from "./components/NavBar";
 
 import AddEquipment from "./components/addEquipment";
 import EquipmentList from "./components/equipmentList";
-
+import EquipmentToBought from "./components/equipmentToBought";
 import LandingPage from "./components/LandingPage";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import EquipmentsCards from "./components/equipmentMain";
@@ -12,7 +12,6 @@ import AddClient from "./components/addClient";
 import ClientList from "./components/clientList";
 import ClientFeeStatus from "./components/ClientFeeStatus";
 import ClientCards from "./components/clientMain";
-
 import AddTrainer from "./components/addTrainer";
 import TrainerCards from "./components/trainerMain";
 import TrainerList from "./components/trainerList";
@@ -20,11 +19,7 @@ import UpdateTrainer from "./components/updateTrainer";
 import LogInSide from "./components/login";
 import Footer from "./components/footer";
 
-
-
-
-function App(){
-
+function App() {
   const location = useLocation();
 
   // Hide the NavBar component on the home page ("/")
