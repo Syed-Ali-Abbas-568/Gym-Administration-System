@@ -20,11 +20,9 @@ import TrainerList from "./components/trainerList";
 import UpdateTrainer from "./components/updateTrainer";
 import LogInSide from "./components/login";
 import Footer from "./components/footer";
+
+import EditClient from "./components/editClient";
 import TrainerFee from "./components/trainerFee";
-
-
-
-
 
 
 function App(){
@@ -46,15 +44,18 @@ function App(){
         <Route path="/changeequipment/:id" element={<ChangeEquipment />} />
         <Route path="/client" element={<ClientCards />} />
         <Route path="/addclient" element={<AddClient />} />
-        <Route path="/clientlist" element={<ClientList />} />
-        <Route path="/clientFeeStatus" element={<ClientFeeStatus />} />
 
-        {/* Trainer routes below */}
+        <Route path="/clientlist" element={<ClientList />}/>  
+        <Route path="/editClient/:id" element={<EditClient/>}/>
+        <Route path="/clientFeeStatus" element={<ClientFeeStatus/>}/> 
+
+
         <Route path="/trainer" element={<TrainerCards />} />
         <Route path="/addtrainer" element={<AddTrainer />} />
         <Route path="/trainerlist" element={<TrainerList />} />
         <Route path="/trainer/updateTrainer/:id" element={<UpdateTrainer />} />
         <Route path="/trainerFeeStatus" element={<TrainerFee />} />
+
       </Routes>
       <Footer />
     </div>

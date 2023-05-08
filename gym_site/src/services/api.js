@@ -45,7 +45,15 @@ export const changeEquipment = async (equipment, id) => {
         console.log("Error while calling Change Equipment API ", error)
     }
 }
+export const changeClient = async (client, id) => {
 
+    try {
+        return await axios.post(`${URL}/client/update/${id}`, client)
+    }
+    catch (error) {
+        console.log("Error while calling Change Client API ", error)
+    }
+}
 
 export const delEquipment = async (id) => {
 
@@ -77,16 +85,17 @@ export const displayClients = async () => {
         console.log("Error while calling Display Client API ", error)
     }
 }
+export const getClient = async (id) => {
 
-export const getOnlyOneClient = async (id) => {
 
     try {
-        return await axios.get(`${URL}/client/getClient/info/:id'${id}`)
+        return await axios.get(`${URL}/getclient/${id}`)
     }
     catch (error) {
-        console.log("Error while calling Display Client API ", error)
+        console.log("Error while calling Get Client API ", error)
     }
 }
+
 
 
 
@@ -115,6 +124,17 @@ export const UpdateClientFeeInformation = async (id, clientInfo) => {
       console.log("Error while calling Update Client Fee Status API ", error);
     }
   }
+
+  export const delClient = async (id) => {
+
+    try {
+        return await axios.delete(`${URL}/deleteClient/${id}`)
+    }
+    catch (error) {
+        console.log("Error while calling delete Client API ", error)
+    }
+}
+
 
 
 
@@ -204,4 +224,5 @@ export const UpdateTrainerFeeInfo= async (id, trainerInfo) => {
       console.log("Error while calling Update Trainer Fee Status API ", error);
     }
   }
+
 

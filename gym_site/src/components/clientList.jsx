@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Table, TableHead, TableRow, TableCell, TableBody } from '@mui/material';
-import { displayClients } from '../services/api';
+import { displayClients,delClient } from '../services/api';
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { Link ,useNavigate} from "react-router-dom";
@@ -16,6 +16,14 @@ const ClientList = () => {
     const clientList = await displayClients();
     setClients(clientList.data);
   };
+
+  const deleteClient=async(id)=>{
+
+    await delClient(id);
+    window.location.reload(false);
+    alert("Client Deleted successfully!");
+  }
+
 
   return (
     <Table sx={{ width: "80%", margin: "50px auto 0 auto" }}>
@@ -39,9 +47,9 @@ const ClientList = () => {
             <TableCell>{client.feestatus}</TableCell>
             <TableCell>
                
-               <EditIcon sx={{ margin: "10px" }} color="success"/>
+               <Link to={`/editclient/${client._id}`} ><EditIcon sx={{ margin: "10px" }} color="success"/></Link>
                
-               <DeleteIcon  sx={{ margin: "10px",color:"#ba1414" }}/>
+               <DeleteIcon  sx={{ margin: "10px",color:"#ba1414" }} onClick={()=>deleteClient(client._id)}/>
                   
                  </TableCell>
           </TableRow>
