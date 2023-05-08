@@ -57,7 +57,7 @@ function App(){
         <Route path="/trainerFeeStatus" element={<TrainerFee />} />
       </Routes>
       <Footer />
-    </div>
+    </div> 
   );
 }
 
