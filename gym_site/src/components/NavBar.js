@@ -17,7 +17,7 @@ const NavBar = () => {
 
         <Tabs to="/equipment">Equipment</Tabs>
         <Tabs to="/client">Client</Tabs>
-               
+        <Tabs to="/trainer">Trainer</Tabs>
 
        </Toolbar>
     </AppBar>
