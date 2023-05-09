@@ -1,5 +1,7 @@
 import { AppBar, Toolbar, styled } from "@mui/material";
 import { NavLink } from "react-router-dom";
+import LogoutIcon from '@mui/icons-material/Logout';
+import { useNavigate} from "react-router-dom";
 
 const Tabs = styled(NavLink)`
   font-size: 20px;
@@ -11,6 +13,7 @@ const Tabs = styled(NavLink)`
 `;
 
 const NavBar = () => {
+  const navigate=useNavigate()
   return (
     <AppBar position="static"  >
       <Toolbar sx={{background:'#317af7'}}>
@@ -21,7 +24,9 @@ const NavBar = () => {
         <Tabs to="/client" sx={{color: 'white'}}>Client</Tabs>
                
         <Tabs to="/trainer" sx={{color: 'white'}}>Trainer</Tabs>
+       <LogoutIcon sx={{marginLeft:'auto',fontSize: 40}} onClick={()=>navigate('/')}/> 
        </Toolbar>
+      
     </AppBar>
   );
 };

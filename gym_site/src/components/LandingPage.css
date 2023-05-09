@@ -52,4 +52,16 @@
     height: 100%;
     /* Add your background image or video here */
   }
+  .rotate {
+    animation: spin 4s infinite linear;
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
   

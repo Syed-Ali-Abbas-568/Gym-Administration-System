@@ -11,6 +11,7 @@ alignItems: "center",
 justifyContent: "center",
 height: "100vh",
 backgroundColor: "#F8F8F8",
+
 },
 textContainer: {
 display: "flex",

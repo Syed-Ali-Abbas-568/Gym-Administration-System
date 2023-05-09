@@ -8,6 +8,10 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: '#317af7', // light blue background color
     padding: theme.spacing(2),
     textAlign: 'center',
+    position: 'relative',
+    bottom: 0,
+    width: '100%',
+
   },
   socialIcons: {
     display: 'flex',
