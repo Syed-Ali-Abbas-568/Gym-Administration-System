@@ -14,6 +14,7 @@ import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Alert } from "@mui/material";
 import { useNavigate } from 'react-router-dom';
+import GymLogo from './gymlogo';
 
 function Copyright(props) {
   return (
@@ -80,6 +81,7 @@ export default function LogInSide() {
               alignItems: 'center',
             }}
           >
+            <GymLogo/>
             <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
               <LockOutlinedIcon />
             </Avatar>

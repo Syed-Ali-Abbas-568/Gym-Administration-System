@@ -21,7 +21,7 @@ export default function EquipmentsCards() {
       <CardMedia
           component="img"
           height="400"
-          image="./gymEquipment.jpg"
+          image="./addEquip.gif"
           alt="addequipment"
         />
         <CardContent>
@@ -43,7 +43,7 @@ export default function EquipmentsCards() {
       <CardMedia
           component="img"
           height="400"
-          image="./listEquipment.jpg"
+          image="./eqList.gif"
           alt="gymequipment"
         />
         <CardContent>
@@ -66,7 +66,7 @@ export default function EquipmentsCards() {
       <CardMedia
           component="img"
           height="370"
-          image="./maintainenceEquipment.jpg"
+          image="./maintainance.gif"
           alt="addequipment"
         />
         <CardContent>
