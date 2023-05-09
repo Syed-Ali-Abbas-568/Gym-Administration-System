@@ -21,7 +21,7 @@ export default function TrainerCards() {
       <CardMedia
           component="img"
           height="400"
-          image="./addClient.jpg"
+          image="./add.gif"
           alt="addequipment"
           
          />
@@ -44,7 +44,7 @@ export default function TrainerCards() {
       <CardMedia
           component="img"
           height="400"
-          image="./userList.png"
+          image="./info.gif"
           alt="gymequipment"
         />
         <CardContent>
@@ -67,7 +67,7 @@ export default function TrainerCards() {
       <CardMedia
           component="img"
           height="380"
-          image="./feeStatus.png"
+          image="./card.gif"
           alt="addequipment"
           color='white'
         />

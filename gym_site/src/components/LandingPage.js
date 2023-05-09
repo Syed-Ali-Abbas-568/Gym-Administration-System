@@ -83,7 +83,7 @@ className={classes.feature}
 </Grid>
 </Grid>
 <img
-     src="./pageimg.jpg"
+     src="./landImg.gif"
      alt="react logo"
      className={classes.image}
    />
