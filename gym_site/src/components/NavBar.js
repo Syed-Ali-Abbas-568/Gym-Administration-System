@@ -21,6 +21,7 @@ const NavBar = () => {
         <Tabs to="/client" sx={{color: 'white'}}>Client</Tabs>
                
         <Tabs to="/trainer" sx={{color: 'white'}}>Trainer</Tabs>
+        <Tabs to="/meettheteam" sx={{color: 'white'}}>Our Team</Tabs>
        </Toolbar>
     </AppBar>
   );
