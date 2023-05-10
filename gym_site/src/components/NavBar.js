@@ -24,7 +24,11 @@ const NavBar = () => {
         <Tabs to="/client" sx={{color: 'white'}}>Client</Tabs>
                
         <Tabs to="/trainer" sx={{color: 'white'}}>Trainer</Tabs>
+
+        <Tabs to="/meettheteam" sx={{color: 'white'}}>Our Team</Tabs>
+
        <LogoutIcon sx={{marginLeft:'auto',fontSize: 40}} onClick={()=>navigate('/')}/> 
+
        </Toolbar>
       
     </AppBar>

@@ -23,7 +23,7 @@ import Footer from "./components/footer";
 
 import EditClient from "./components/editClient";
 import TrainerFee from "./components/trainerFee";
-
+import MeetTheTeam from "./components/meettheteam";
 
 function App(){
 
@@ -38,6 +38,7 @@ function App(){
       <Routes>
         <Route path="/" element={<LogInSide />} />
         <Route path="/home" element={<LandingPage />} />
+        <Route path="/meettheteam" element={<MeetTheTeam />} />
         <Route path="/addequipment" element={<AddEquipment />} />
         <Route path="/equipmentlist" element={<EquipmentList />} />
         <Route path="/equipment" element={<EquipmentsCards />} />
