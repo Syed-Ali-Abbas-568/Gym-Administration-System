@@ -16,12 +16,12 @@ export default function TrainerCards() {
 <Box sx={{display:'flex',flexDirection:'row',alignItems:'center',justifyContent:'space-evenly'}}>
 
     <Link style={{ textDecoration: 'none' }} to="/addtrainer">
-    <Card sx={{m:5,width:400 ,height:600}}>
+    <Card sx={{m:5,width:300 ,height:500}}>
       <CardActionArea>
       <CardMedia
           component="img"
-          height="500"
-          image="./addClient.jpg"
+          height="400"
+          image="./add.gif"
           alt="addequipment"
           
          />
@@ -39,12 +39,12 @@ export default function TrainerCards() {
 
 
     <Link style={{ textDecoration: 'none' }} to="/trainerlist">
-    <Card sx={{m:5,width:400 ,height:600}}>
+    <Card sx={{m:5,width:300 ,height:500}}>
       <CardActionArea>
       <CardMedia
           component="img"
-          height="500"
-          image="./userList.png"
+          height="400"
+          image="./info.gif"
           alt="gymequipment"
         />
         <CardContent>
@@ -62,12 +62,12 @@ export default function TrainerCards() {
 
 
 <Link style={{ textDecoration: 'none' }} to="/trainerFeeStatus">
-    <Card sx={{m:5,width:400 ,height:600}}>
+    <Card sx={{m:5,width:300 ,height:500}}>
       <CardActionArea>
       <CardMedia
           component="img"
-          height="500"
-          image="./feeStatus.png"
+          height="380"
+          image="./card.gif"
           alt="addequipment"
           color='white'
         />

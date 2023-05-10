@@ -11,6 +11,7 @@ alignItems: "center",
 justifyContent: "center",
 height: "100vh",
 backgroundColor: "#F8F8F8",
+
 },
 textContainer: {
 display: "flex",
@@ -82,7 +83,7 @@ className={classes.feature}
 </Grid>
 </Grid>
 <img
-     src="./pageimg.jpg"
+     src="./landImg.gif"
      alt="react logo"
      className={classes.image}
    />
